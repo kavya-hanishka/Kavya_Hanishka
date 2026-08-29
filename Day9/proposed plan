@@ -1,0 +1,13 @@
+## Proposed Data-Preparation Plan
+
+1. **Annotation:** Keep the original Supervisely bitmap annotations and convert them to the required **YOLO format** once the final model/task is confirmed.
+
+2. **Missing annotations:** Manually inspect the two missing-annotation frames and recover/correct them if needed; otherwise, document their exclusion.
+
+3. **Preprocessing:** Use aspect-ratio-preserving resizing/letterboxing because the dataset contains 480×270 and 480×360 images.
+
+4. **Split:** Proposed 70% train / 15% validation / 15% test, preferably splitting by source video rather than individual frames to reduce data leakage.
+
+5. **Augmentation:** Do not apply heavy augmentation blindly; decide on suitable augmentation after Visual EDA, based on the actual image conditions.
+
+6. **Raw data:** Keep the original dataset unchanged and create a separate prepared dataset for preprocessing and model training.
